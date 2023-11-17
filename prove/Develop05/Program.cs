@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 class Program
 {
@@ -142,7 +143,11 @@ class QuestManager
         string type = Console.ReadLine();
 
         Console.Write("Enter score for the goal: ");
-        int score = int.Parse(Console.ReadLine());
+        if (!int.TryParse(Console.ReadLine(), out int score) || score < 0)
+        {
+            Console.WriteLine("Invalid score. Please enter a non-negative integer.");
+            return;
+        }
 
         Goal goal;
 
@@ -156,7 +161,11 @@ class QuestManager
                 break;
             case "3":
                 Console.Write("Enter required times for the checklist goal: ");
-                int requiredTimes = int.Parse(Console.ReadLine());
+                if (!int.TryParse(Console.ReadLine(), out int requiredTimes) || requiredTimes < 0)
+                {
+                    Console.WriteLine("Invalid required times. Please enter a non-negative integer.");
+                    return;
+                }
                 goal = new ChecklistGoal(name, score, requiredTimes);
                 break;
             default:
