@@ -24,7 +24,7 @@ class Program
 {
     static void Main()
     {
-        // Create 3-4 videos
+
         List<Video> videos = new List<Video>
         {
             new Video
@@ -32,17 +32,43 @@ class Program
                 Title = "Introduction to C# Programming",
                 Author = "CodeMaster",
                 LengthInSeconds = 600,
-                Comments = new List<Comment>
+                Comments =
                 {
                     new Comment { CommenterName = "User1", CommentText = "Great tutorial!" },
                     new Comment { CommenterName = "User2", CommentText = "Very helpful!" },
                     new Comment { CommenterName = "User3", CommentText = "I learned a lot." }
                 }
             },
-            // Create more videos with comments
+
+            new Video
+            {
+                Title = "C# Programming Basics",
+                Author = "CodeMaster",
+                LengthInSeconds = 915,
+                Comments =
+                {
+                    new Comment { CommenterName = "User1", CommentText = "Info was great!" },
+                    new Comment { CommenterName = "User2", CommentText = "Very helpful again!" },
+                    new Comment { CommenterName = "User3", CommentText = "I liked what I learned" }
+                }
+            },
+
+            new Video
+            {
+                Title = "Introduction to C# Methods & Classes",
+                Author = "CodeMaster",
+                LengthInSeconds = 830,
+                Comments =
+                {
+                    new Comment { CommenterName = "User1", CommentText = "I liked this!" },
+                    new Comment { CommenterName = "User2", CommentText = "Very intersting!" },
+                    new Comment { CommenterName = "User3", CommentText = "I was intersted in this" }
+                }
+            },
+
         };
 
-        // Iterate through the list of videos and display information
+        // Go through the list of videos and display information
         foreach (var video in videos)
         {
             Console.WriteLine($"Title: {video.Title}");
@@ -57,7 +83,7 @@ class Program
                 Console.WriteLine($"- {comment.CommenterName}: {comment.CommentText}");
             }
 
-            Console.WriteLine(); // Add a newline for better readability
+            Console.WriteLine();
         }
     }
 }
