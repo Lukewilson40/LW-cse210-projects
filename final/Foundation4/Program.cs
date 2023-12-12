@@ -5,7 +5,7 @@ using System.Collections.Generic;
 class Activity
 {
     private DateTime date;
-    private int durationMinutes;
+    protected int durationMinutes;
 
     public Activity(DateTime date, int durationMinutes)
     {

@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 // Address class to represent the address of an event
 class Address
@@ -25,11 +26,12 @@ class Address
 // Base Event class
 class Event
 {
-    private string title;
-    private string description;
-    private DateTime date;
-    private TimeSpan time;
-    private Address address;
+    protected string title;
+    protected string description;
+    protected DateTime date;
+    protected TimeSpan time;
+    protected Address address;
+
 
     public Event(string title, string description, DateTime date, TimeSpan time, Address address)
     {
@@ -39,6 +41,7 @@ class Event
         this.time = time;
         this.address = address;
     }
+
 
     public string GetStandardDetails()
     {
@@ -62,6 +65,8 @@ class Lecture : Event
     private string speaker;
     private int capacity;
 
+
+
     public Lecture(string title, string description, DateTime date, TimeSpan time, Address address, string speaker, int capacity)
         : base(title, description, date, time, address)
     {
@@ -73,6 +78,7 @@ class Lecture : Event
     {
         return $"{base.GetFullDetails()}\nType: Lecture\nSpeaker: {speaker}\nCapacity: {capacity}";
     }
+
 
     public override string GetShortDescription()
     {

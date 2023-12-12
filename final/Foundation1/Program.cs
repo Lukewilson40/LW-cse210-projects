@@ -84,6 +84,6 @@ class Program
             }
 
             Console.WriteLine();
-        }
+        };
     }
 }

@@ -159,6 +159,6 @@ class Program
 
         Console.WriteLine($"\nTotal Price: ${order.GetTotalPrice():F2}\n");
 
-        Console.WriteLine(new string('-', 40)); // Separator for better readability
+        Console.WriteLine(new string('-', 40));
     }
 }
